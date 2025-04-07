@@ -11,7 +11,7 @@ const path=require('path')
 
 const app=express()
 
-const PORT=4000
+const PORT=process.env.PORT ||4000
 
 dotEnv.config();//access the Info in dotenv
 
@@ -28,7 +28,7 @@ app.use('/firm',firmRoutes)
 app.use('/product',productRoutes)
 app.use('/uploads',express.static('uploads') )
 
-app.use("/Home",(req,res)=>{
+app.use("/",(req,res)=>{
     res.send("<h1>Welcome to INDIA<h1>")
 })
 
