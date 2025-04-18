@@ -11,7 +11,9 @@ dotenv.config();
 const secretKey=process.env.WHATISYOURNAME
 
 const vendorRegister=async(req,res)=>{
-    const {username,email,password}=req.body;
+    console.log("Register Request Body:", req.body);
+    const {username,email,password}=req.body;  
+    
     try{
         const vendorEmail=await Vendor.findOne({email});
         if(vendorEmail){
